@@ -2,7 +2,7 @@ import React from 'react';
 import Table from '../../components/Shared/Table/Table';
 import useGlobal from '../../utils/hooks/useGlobal';
 
-const Dashboard = () => {
+export default function AllUsers() {
     const { users } = useGlobal();
 
     const configData = [
@@ -32,5 +32,3 @@ const Dashboard = () => {
         </div>
     );
 };
-
-export default Dashboard;

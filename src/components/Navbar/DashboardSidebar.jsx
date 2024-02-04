@@ -22,7 +22,7 @@ const navItem = [
     {
         id: 3,
         title: 'Users',
-        link: '/users'
+        link: '/dashboard/users'
     },
     {
         id: 4,
@@ -62,7 +62,7 @@ const DashboardSidebar = () => {
                             >
                                 {({ isActive }) => (
                                     <div className={`px-[2rem] flex justify-start items-start gap-4 py-3 
-                                        ${isActive ? 'bg-primary2 border-r-4 rounded-tl-[2.5px] rounded-bl-[2.5px] border-primary4' : 'hover:bg-primary2'}`}>
+                                        ${isActive ? 'sidebar-hover bg-primary2 border-r-4 rounded-tl-[2.5px] rounded-bl-[2.5px] border-primary4 sidebar-hovernone' : 'hover:bg-primary2 '}`}>
                                         <p className={`text-2xl leading-6 font-semibold ${isActive ? 'text-primary4' : 'text-light'}`}>{navList.title}</p>
                                     </div>
                                 )}
