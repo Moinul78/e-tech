@@ -32,7 +32,7 @@ const navItem = [
     {
         id: 4,
         title: 'Add Product',
-        link: '/addproduct'
+        link: '/dashboard/addproduct'
     },
     {
         id: 5,

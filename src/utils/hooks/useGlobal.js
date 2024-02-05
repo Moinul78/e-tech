@@ -32,6 +32,6 @@ export default function useGlobal() {
         fetchData();
     }, []);
     return {
-        users, products
+        users, products, setProducts
     };
 }
