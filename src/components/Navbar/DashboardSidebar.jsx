@@ -20,12 +20,12 @@ const navItem = [
         link: '/dashboard'
     },
     {
-        id: 3,
+        id: 2,
         title: 'Users',
         link: '/dashboard/users'
     },
     {
-        id: 4,
+        id: 3,
         title: 'Products',
         link: '/dashboard/products'
     },
@@ -36,11 +36,16 @@ const navItem = [
     },
     {
         id: 5,
+        title: 'Add User',
+        link: '/dashboard/adduser'
+    },
+    {
+        id: 6,
         title: 'Help Center',
         link: '/helpCenter'
     },
     {
-        id: 6,
+        id: 7,
         title: 'Log Out',
         link: '/logout'
     },

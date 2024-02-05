@@ -12,7 +12,7 @@ const SignUp = lazy(() => import('../pages/SignUp/SignUp'));
 const AllUsers = lazy(() => import('../pages/Dashboard/AllUsers'));
 const AllProducts = lazy(() => import('../pages/Dashboard/AllProducts'));
 const AddProduct = lazy(() => import('../pages/Dashboard/AddProduct'));
-
+const AddUser = lazy(() => import('../pages/Dashboard/AddUsers'));
 const Layout = lazy(() => import('../layout/Layout'));
 
 function Routers() {
@@ -32,6 +32,7 @@ function Routers() {
             <Route path='/dashboard/users' element={<AllUsers />} />
             <Route path='/dashboard/products' element={<AllProducts />} />
             <Route path='/dashboard/addproduct' element={<AddProduct />} />
+            <Route path='/dashboard/adduser' element={<AddUser />} />
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
