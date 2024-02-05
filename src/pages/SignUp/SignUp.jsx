@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Input from "../../components/Shared/Inputs/Input";
 import Button from "../../components/Shared/Button/Button";
+import { setUser } from "../../store/Reducer/userSlice";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 
 export default function SignUp() {
-  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm();
+  const { register, handleSubmit, reset, formState: { errors }, watch, setValue } = useForm();
   const [loginError, setLoginError] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    console.log(data);
     setLoginError("");
+    const user = { phoneNumber: data.phoneNumber, password: data.password };
+    dispatch(setUser(user));
+    toast.success("Congratulation!! You Are Authenticated!!");
+    reset();
+    navigate('/');
   };
 
   return (

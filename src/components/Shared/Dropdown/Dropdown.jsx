@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import arrow from '../../../assets/Icons/arrow-down.svg'
 
-const Dropdown = ({ data, onChange = () => {}, error, placeholder = 'Select', label = 'label', other=true }) => {
+const Dropdown = ({ data, onChange = () => { }, error, placeholder = 'Select', label = 'label', other = true }) => {
     const [selected, setSelected] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
     const [isClicked, setClicked] = useState(false);
@@ -10,7 +10,6 @@ const Dropdown = ({ data, onChange = () => {}, error, placeholder = 'Select', la
     const inputRef = useRef(null);
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(inputRef.current.value);
         inputRef.current.value = "";
         setClicked(false)
     }
@@ -35,7 +34,7 @@ const Dropdown = ({ data, onChange = () => {}, error, placeholder = 'Select', la
         // Add event listener when the dropdown is open
         if (isOpen) {
             document.addEventListener('mousedown', handleClickOutside);
-           
+
         } else {
             // Remove the event listener when the dropdown is closed
             document.removeEventListener('mousedown', handleClickOutside);
@@ -74,15 +73,15 @@ const Dropdown = ({ data, onChange = () => {}, error, placeholder = 'Select', la
                             {item.name}
                         </li>
                     ))}
-                   {other && 
-                   !isClicked ? <li 
-                   onClick={() => setClicked(true)}
-                   className={` text-primary1 bg-white  py-2 px-6  hover:bg-primary2 hover:text-white cursor-pointer `}
-           
-           >Add New</li> : <form className=' px-6' onSubmit={handleSubmit}>
-            <input ref={inputRef} className='w-full border border-label focus:outline-none py-2 px-6 mb-2 rounded-full' type="text" placeholder='Add new' name="" id="" />
-           </form>
-                   }
+                    {other &&
+                        !isClicked ? <li
+                            onClick={() => setClicked(true)}
+                            className={` text-primary1 bg-white  py-2 px-6  hover:bg-primary2 hover:text-white cursor-pointer `}
+
+                        >Add New</li> : <form className=' px-6' onSubmit={handleSubmit}>
+                        <input ref={inputRef} className='w-full border border-label focus:outline-none py-2 px-6 mb-2 rounded-full' type="text" placeholder='Add new' name="" id="" />
+                    </form>
+                    }
 
                 </ul>
             </div>

@@ -8,7 +8,6 @@ import Button from "../../components/Shared/Button/Button";
 export default function AddNewUser() {
     const { register, handleSubmit, reset, watch, setValue } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
         setLoginError("");
         reset();
     };

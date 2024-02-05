@@ -1,13 +1,31 @@
 import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/Icons/react-logo.svg';
 import cancel from '../../assets/Icons/cancel.svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { clearUser } from '../../store/Reducer/userSlice';
+import toast from 'react-hot-toast';
 // import styles from './navbar.module.css'
 
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
+  const user = useSelector((state) => state.userStore.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Dispatch the clearUser action to update Redux store
+    dispatch(clearUser());
+
+    // Remove token from local storage
+    localStorage.removeItem('token');
+    // Show success toast
+    toast.success('Logout successful!');
+    navigate('/');
+  };
+
 
   useEffect(() => {
     setIsActive(false)
@@ -33,12 +51,19 @@ const Navbar = () => {
               <li>
                 <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/shop" >Shop</NavLink>
               </li>
-              <li>
-                <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
-              </li>
-              <li>
-                <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
-              </li>
+              {
+                user && <li>
+                  <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
+                </li>
+              }
+              {
+                !user?.phoneNumber ? <li>
+                  <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
+                </li>
+                  : <li onClick={handleLogout}>
+                    <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/logout" >Logout</NavLink>
+                  </li>
+              }
             </ul>
           </div>
 
@@ -58,12 +83,16 @@ const Navbar = () => {
           <li>
             <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/shop" >Shop</NavLink>
           </li>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
-          </li>
-          <li>
-            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
-          </li>
+          {
+            user && <li>
+              <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
+            </li>
+          }
+          {
+            !user?.phoneNumber && <li>
+              <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
+            </li>
+          }
         </ul>
       </div>
 

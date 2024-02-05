@@ -12,8 +12,6 @@ export default function Cart() {
         dispatch(removeCartItem(productId));
         toast.success("Item Deleted Successfully!!");
     };
-
-    console.log(cartItems);
     return (
         <div className="container mt-10">
             {cartItems.length > 0 ? (

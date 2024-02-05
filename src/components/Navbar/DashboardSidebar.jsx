@@ -15,14 +15,9 @@ import { NavLink } from 'react-router-dom';
 
 const navItem = [
     {
-        id: 1,
-        title: 'Dashboard',
-        link: '/dashboard'
-    },
-    {
         id: 2,
         title: 'Users',
-        link: '/dashboard/users'
+        link: '/dashboard'
     },
     {
         id: 3,

@@ -7,8 +7,7 @@ import toast from "react-hot-toast";
 
 export default function AddProduct() {
     const { register, handleSubmit, reset } = useForm();
-    const { products, setProducts } = useGlobal();
-    console.log(products);
+    const { setProducts } = useGlobal();
 
     const onSubmit = (data) => {
         const newProduct = {
@@ -16,7 +15,6 @@ export default function AddProduct() {
             title: data.title,
             price: data.price,
         }
-        console.log(newProduct);
         setProducts((prevProducts) => [...prevProducts, newProduct]);
         toast.success("product added succesfully!");
         reset();

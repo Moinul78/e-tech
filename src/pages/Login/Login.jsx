@@ -1,19 +1,66 @@
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Input from "../../components/Shared/Inputs/Input";
 import Button from "../../components/Shared/Button/Button";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/Reducer/userSlice";
+import toast from "react-hot-toast";
+// import * as jwt from 'jsonwebtoken';
+
 
 export default function LogIn() {
   const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm();
   const [loginError, setLoginError] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   // Check if user is available in localStorage on component mount
+  //   const storedUser = localStorage.getItem('user');
+  //   const storedIsAuthenticated = localStorage.getItem('isAuthenticated');
+
+  //   if (storedUser && storedIsAuthenticated) {
+  //     // Parse stored user and set authentication state
+  //     const user = JSON.parse(storedUser);
+  //     dispatch(setUser(user));
+  //   }
+  // }, [dispatch, navigate]);
+
+  // const generateJwtToken = (phoneNumber, password) => {
+  //   //expiration time
+  //   const expiresIn = '1d';
+  //   const token = jwt.sign({ phoneNumber, password }, { expiresIn });
+  //   return token;
+  // };
 
   const onSubmit = (data) => {
-    console.log(data);
-    setLoginError("");
+    // Create JWT token using phone number and password (i am not using any secret key here)
+    // const token = generateJwtToken(user.phoneNumber, user.password);
+    // set token into localstorage
+    // localStorage.setItem('token', token);
+    // Dispatch the setUser action to update Redux store and localStorage
+    const storedUser = localStorage.getItem('user');
+    const user = JSON.parse(storedUser);
+    if (user?.phoneNumber === data.phoneNumber && user?.password === data.password) {
+      // Parse stored user and set authentication state
+      dispatch(setUser(user));
+
+      // Store authentication state in localStorage
+      localStorage.setItem('isAuthenticated', true);
+      navigate('/');
+      toast.success('Login successful!');
+      setLoginError("");
+    } else {
+      toast.error('user not found');
+    }
   };
+
+
+
+
 
   return (
     <div className="container">

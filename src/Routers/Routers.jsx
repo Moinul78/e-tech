@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import DashboardLayout from '../layout/DashboardLayout';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Loading from '../pages/Loading/Landing';
-import Dashboard from '../pages/Dashboard/Dashboard';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Login = lazy(() => import('../pages/Login/Login'));
 const Payment = lazy(() => import('../pages/Payment/Payment'));
@@ -30,8 +29,7 @@ function Routers() {
             <Route path="/cart" element={<Cart />} />
           </Route>
           <Route path='/dashboard' element={<DashboardLayout />} >
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/dashboard/users' element={<AllUsers />} />
+            <Route path='/dashboard' element={<AllUsers />} />
             <Route path='/dashboard/products' element={<AllProducts />} />
             <Route path='/dashboard/addproduct' element={<AddProduct />} />
             <Route path='/dashboard/adduser' element={<AddUser />} />

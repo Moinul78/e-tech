@@ -4,7 +4,6 @@ import useGlobal from '../../utils/hooks/useGlobal';
 
 export default function AllProducts() {
     const { products } = useGlobal();
-    console.log(products);
 
     const configData = [
         {
