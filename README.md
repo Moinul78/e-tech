@@ -44,7 +44,6 @@ This project, `react-vite-template`, provides a solid foundation for building Re
 
 ## Start the development server using Vite and environment-specific configurations.
 
-```bash
 # Using yarn
 yarn i
 yarn dev
