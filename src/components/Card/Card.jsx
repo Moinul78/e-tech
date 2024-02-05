@@ -1,7 +1,7 @@
 import React from 'react';
 import useFetch from '../../utils/hooks/useFetch';
 import Loading from '../../pages/Loading/Landing';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/Reducer/cartSlice';
 import useGlobal from '../../utils/hooks/useGlobal';
 
@@ -9,12 +9,10 @@ export default function Card() {
     const { loading } = useFetch();
     const { products } = useGlobal();
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cartStore.cart);
+    // const cartItems = useSelector((state) => state.cartStore.cart);
 
     const handleAddToCart = (product) => {
-        console.log('Before dispatch:', cartItems);
         dispatch(addToCart(product));
-        console.log('After dispatch:', cartItems);
     };
 
     const extractImageFromData = (data) => {

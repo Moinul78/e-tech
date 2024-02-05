@@ -34,6 +34,9 @@ const Navbar = () => {
                 <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/shop" >Shop</NavLink>
               </li>
               <li>
+                <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
+              </li>
+              <li>
                 <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
               </li>
             </ul>
@@ -53,10 +56,13 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/" >Home</NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/about-us" >About Us</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/shop" >Shop</NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/contact-us" >Contact us</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/cart" >Cart</NavLink>
+          </li>
+          <li>
+            <NavLink className={({ isActive }) => isActive ? 'text-primary4' : 'text-black'} to="/login" >Login</NavLink>
           </li>
         </ul>
       </div>
