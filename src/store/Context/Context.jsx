@@ -9,9 +9,9 @@ export default function Contexts({ children }) {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <ApiProvider api={proudctApi}>
-          {children}
-        </ApiProvider>
+        {/* <ApiProvider api={proudctApi}> */}
+        {children}
+        {/* </ApiProvider> */}
       </Provider>
     </BrowserRouter>
   );

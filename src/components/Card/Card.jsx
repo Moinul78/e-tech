@@ -9,7 +9,7 @@ export default function Card() {
     const { loading } = useFetch();
     const { products } = useGlobal();
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart);
+    const cartItems = useSelector((state) => state.cartStore.cart);
 
     const handleAddToCart = (product) => {
         console.log('Before dispatch:', cartItems);

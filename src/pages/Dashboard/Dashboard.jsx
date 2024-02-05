@@ -5,21 +5,6 @@ import useGlobal from '../../utils/hooks/useGlobal';
 const Dashboard = () => {
     const { users } = useGlobal();
 
-    const configData = [
-        {
-            name: 'Email',
-            key: 'email',
-        },
-        {
-            name: "Name",
-            key: "name",
-        },
-        {
-            name: "Role",
-            key: "role",
-        },
-    ];
-
     return (
         <div className='p-5 h-full'>
             <Table

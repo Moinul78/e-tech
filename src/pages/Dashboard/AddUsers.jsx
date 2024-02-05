@@ -16,7 +16,7 @@ export default function AddNewUser() {
         <div className="container">
             <div className="lg:px-16 bg-base-200 py-16">
                 <div className="mb-10">
-                    <h1 className="text-4xl text-center font-bold">Add New User</h1>
+                    <h1 className="text-4xl text-center font-bold">Add New Customer</h1>
                 </div>
                 <div className="flex justify-center items-center">
                     <form onSubmit={handleSubmit(onSubmit)} className="p-16 w-full lg:w-[50%] lg:shadow-xl bg-base-100">
