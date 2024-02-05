@@ -5,6 +5,18 @@ import 'react-phone-input-2/lib/style.css'
 import Input from "../../components/Shared/Inputs/Input";
 import Button from "../../components/Shared/Button/Button";
 
+/**
+ * This component provides a form for adding a new customer/user. It utilizes the react-hook-form library
+ * for form handling and validation. Users can input the phone number and password of the new customer.
+ *
+ * Features:
+ * - Utilizes react-hook-form for form handling and validation.
+ * - Includes a PhoneInput component for entering the customer's phone number.
+ * - Displays a form with fields for phone number and password.
+ * - Resets the form upon successful submission.
+ * @returns {JSX.Element} - The rendered AddNewUser component.
+ */
+
 export default function AddNewUser() {
     const { register, handleSubmit, reset, watch, setValue } = useForm();
     const onSubmit = (data) => {

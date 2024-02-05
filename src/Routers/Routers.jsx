@@ -5,7 +5,6 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Loading from '../pages/Loading/Landing';
 const Home = lazy(() => import('../pages/Home/Home'));
 const Login = lazy(() => import('../pages/Login/Login'));
-const Payment = lazy(() => import('../pages/Payment/Payment'));
 const Shop = lazy(() => import('../pages/Shop/Shop'));
 const SignUp = lazy(() => import('../pages/SignUp/SignUp'));
 const AllUsers = lazy(() => import('../pages/Dashboard/AllUsers'));
@@ -23,7 +22,6 @@ function Routers() {
           <Route path="/" element={<Layout />} >
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/payment" element={<Payment />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/cart" element={<Cart />} />

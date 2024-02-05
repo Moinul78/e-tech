@@ -6,6 +6,22 @@ import { addToCart } from '../../store/Reducer/cartSlice';
 import useGlobal from '../../utils/hooks/useGlobal';
 import toast from 'react-hot-toast';
 
+/**
+ * This component displays a grid of product cards fetched from the global state using the useGlobal hook.
+ * Each card includes product information such as image, title, description, and price. Users can add
+ * products to the cart by clicking the "Add to Cart" button. If the user is not logged in, an error toast
+ * prompts them to log in before adding to the cart.
+ *
+ * Features:
+ * - Utilizes the useFetch hook for loading data and displays a loading spinner during data fetching.
+ * - Uses the useGlobal hook to access products from the global state.
+ * - Dispatches addToCart action to add products to the Redux store cart.
+ * - Displays a grid of product cards with image, title, description, and price.
+ * - Truncates long descriptions for a cleaner presentation.
+ * - Error toast displayed if the user is not logged in when attempting to add to the cart.
+ * @returns {JSX.Element} - The rendered Card component.
+ */
+
 export default function Card() {
     const { loading } = useFetch();
     const { products } = useGlobal();

@@ -10,6 +10,22 @@ import { setUser } from "../../store/Reducer/userSlice";
 import toast from "react-hot-toast";
 // import * as jwt from 'jsonwebtoken';
 
+/**
+ * This component provides a user interface for logging in. It includes a form with fields for
+ * entering a phone number and password. The form is validated using the react-hook-form library.
+ * User authentication is simulated by comparing entered credentials with stored user data in localStorage.
+ *
+ * Features:
+ * - Phone number input using react-phone-input-2.
+ * - Password input with validation messages.
+ * - Error message display for login errors.
+ * - Form submission triggers authentication simulation and updates Redux store.
+ * - Success toast notification upon successful login.
+ * - Link to the signup page for new users.
+ *
+ * Note: The authentication mechanism is simulated and uses localStorage to store user data.
+ * @returns {JSX.Element} - The rendered LogIn component.
+ */
 
 export default function LogIn() {
   const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm();

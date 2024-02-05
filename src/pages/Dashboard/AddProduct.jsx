@@ -5,6 +5,19 @@ import Button from "../../components/Shared/Button/Button";
 import useGlobal from "../../utils/hooks/useGlobal";
 import toast from "react-hot-toast";
 
+/**
+ * This component provides a form for adding a new product. It utilizes the react-hook-form library
+ * for form handling and validation. Users can input the category, title, and price of the new product.
+ * Upon submission, the product information is added to the global state using the setProducts function
+ * from the useGlobal hook. A success toast notification is displayed upon successful addition.
+ *
+ * Features:
+ * - Utilizes react-hook-form for form handling and validation.
+ * - Adds a new product to the global state using the setProducts function from the useGlobal hook.
+ * - Displays success toast notification upon successful product addition.
+ * @returns {JSX.Element} - The rendered AddProduct component.
+ */
+
 export default function AddProduct() {
     const { register, handleSubmit, reset } = useForm();
     const { setProducts } = useGlobal();

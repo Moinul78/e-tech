@@ -9,6 +9,22 @@ import { setUser } from "../../store/Reducer/userSlice";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
+/**
+ * SignUp Component
+ *
+ * This component provides a user interface for signing up. It includes a form with fields for
+ * entering a phone number and password. The form is validated using the react-hook-form library.
+ *
+ * Features:
+ * - Phone number input using react-phone-input-2.
+ * - Password input with validation messages.
+ * - Error message display for login errors.
+ * - Form submission triggers authentication and dispatches user information to the Redux store.
+ * - Success toast notification upon successful authentication.
+ * @returns {JSX.Element} - The rendered SignUp component.
+ */
+
+
 export default function SignUp() {
   const { register, handleSubmit, reset, formState: { errors }, watch, setValue } = useForm();
   const [loginError, setLoginError] = useState("");
