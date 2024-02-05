@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useFetch from '../../utils/hooks/useFetch';
 import Loading from '../../pages/Loading/Landing';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/Reducer/cartSlice';
+import useGlobal from '../../utils/hooks/useGlobal';
 
 export default function Card() {
-    const { loading, get } = useFetch();
-    const [products, setProducts] = useState([]);
-    const dispatch = useDispatch(); // Call useDispatch as a function
+    const { loading } = useFetch();
+    const { products } = useGlobal();
+    const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart);
 
     const handleAddToCart = (product) => {
@@ -15,19 +16,6 @@ export default function Card() {
         dispatch(addToCart(product));
         console.log('After dispatch:', cartItems);
     };
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await get('https://api.escuelajs.co/api/v1/products?offset=0&limit=10');
-                setProducts(data);
-            } catch (error) {
-                console.error('Error fetching data:', error.message);
-            }
-        };
-
-        fetchData();
-    }, []);
 
     const extractImageFromData = (data) => {
         // Extract the first image URL from the images array

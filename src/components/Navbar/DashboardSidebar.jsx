@@ -27,7 +27,7 @@ const navItem = [
     {
         id: 4,
         title: 'Products',
-        link: '/products'
+        link: '/dashboard/products'
     },
     {
         id: 4,

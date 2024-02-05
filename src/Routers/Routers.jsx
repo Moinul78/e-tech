@@ -9,7 +9,8 @@ const Login = lazy(() => import('../pages/Login/Login'));
 const Payment = lazy(() => import('../pages/Payment/Payment'));
 const Shop = lazy(() => import('../pages/Shop/Shop'));
 const SignUp = lazy(() => import('../pages/SignUp/SignUp'));
-const AllUsers = lazy(() => import('../pages/Dashboard/Users'));
+const AllUsers = lazy(() => import('../pages/Dashboard/AllUsers'));
+const AllProducts = lazy(() => import('../pages/Dashboard/AllProducts'));
 const Layout = lazy(() => import('../layout/Layout'));
 
 function Routers() {
@@ -27,6 +28,8 @@ function Routers() {
           <Route path='/dashboard' element={<DashboardLayout />} >
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/dashboard/users' element={<AllUsers />} />
+            <Route path='/dashboard/products' element={<AllProducts />} />
+
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
