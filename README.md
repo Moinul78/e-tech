@@ -1,5 +1,4 @@
-# React Vite Template
-
+# E-Tech
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Overview
@@ -10,6 +9,7 @@ This project, `react-vite-template`, provides a solid foundation for building Re
 
 1. **User Authentication:**
    - The project includes a login view, home/landing view, and a registration view for a seamless user experience.
+   - User authentication is managed using `localStorage` for simplicity since there is no backend.
 
 2. **Product Management:**
    - Product list and detail views are available in both the home and shop sections, providing users with comprehensive information.
@@ -26,27 +26,33 @@ This project, `react-vite-template`, provides a solid foundation for building Re
 6. **Product Management for Admins:**
    - Admins can view a list of products, see detailed product information, and add new products.
 
+## Login and Signup
+
+- User authentication is handled using `localStorage`.
+- Users can log in and sign up without the need for a backend.
+- Data is managed locally for simplicity.
+
+## Using GitHub JSON Data
+
+- The project utilizes GitHub JSON data for displaying information.
+- This ensures realistic data for testing and showcasing features.
+
 ## Scripts
 
 - **Development:**
 
-Start the development server using Vite and environment-specific configurations.
 
-- **Build:**
+## Start the development server using Vite and environment-specific configurations.
 
-Build the project for production using the specified production environment.
+```bash
+# Using yarn
+yarn i
+yarn dev
 
-- **Lint:**
+# Using npm
+npm i
+npm run dev
 
-Run ESLint to maintain code quality and adhere to coding standards.
-
-Run Jest for testing.
-
-- **Preview:**
-
-
-- **Test:**
-Preview the project using Vite.
 
 ## Technologies Used
 
@@ -59,6 +65,11 @@ Preview the project using Vite.
 - React Hook Form (v7.50.0)
 - Tailwind CSS (v3.3.3)
 - Jest (for testing)
+
+## Lint
+Used ESLint to maintain code quality and adhere to coding standards.
+Used Jest for testing.
+
 
 ## Dependencies
 
