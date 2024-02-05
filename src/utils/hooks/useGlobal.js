@@ -7,7 +7,7 @@ export default function useGlobal() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://api.escuelajs.co/api/v1/users');
+                const response = await fetch('https://github.com/Moinul78/e-tech/blob/master/src/db/UserData.js');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -19,7 +19,7 @@ export default function useGlobal() {
             }
 
             try {
-                const response = await fetch('https://api.escuelajs.co/api/v1/products?offset=0&limit=10');
+                const response = await fetch('https://github.com/Moinul78/e-tech/blob/master/src/db/ProductsData.js');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
